@@ -6,6 +6,6 @@
   
     - name: Display test host from Vault
       debug:
-        msg: "{{ testhost }}"
+        msg: "{{ ansible_testhost }}"
     - name: Test connection to host
       ping:    
