@@ -1,11 +1,7 @@
--
-    hosts: localhost
-    name: 'Hello World!'
-    tasks:
-        - name: Display Password from Vault
-          debug:
-            msg: "{{ ansible_password }}"
-        - name: Display Host from Vault
-          debug:
-            msg: "{{ ansible_testhost }}"
-             
+--- 
+- 
+  hosts: localhost
+  name: "Hello World!"
+ 
+  tasks: 
+    - debug: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
