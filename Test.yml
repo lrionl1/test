@@ -10,7 +10,7 @@
     
     - name: Display Password from Vault
       debug:
-        msg: "{{ testhost }}"
+        msg="{{  lookup('vault', 'kv_awx/ansible/testhost', 'testhost') }}"
         
     - name: Test connection to host
       ping:    
