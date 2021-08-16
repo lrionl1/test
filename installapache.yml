@@ -11,7 +11,7 @@
         state: present
     - name: ensure httpd is running
       service:
-        name: httpd
+        name: localhost
         state: started
     - name: Open port 80 for http access
       firewalld:
