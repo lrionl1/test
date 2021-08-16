@@ -1,9 +1,8 @@
---- 
-- 
-  hosts: localhost
-  name: "Hello World!"
- 
-  tasks: 
+---
+- name: Show credentials from vault
+  hosts: all
+  gather_facts: false
+  tasks:
     - name: Display testhost from Vault
         debug: msg="{{  lookup('vault', 'kv_awx/ansible', 'testhost') }}"
     - name: Display username from Vault
