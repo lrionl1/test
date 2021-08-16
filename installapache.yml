@@ -3,4 +3,13 @@
     tasks:
         - name : 1. install Apache
           apt: name=apache2 state=present
+          
+        - name : 2. install PHP module for Apache
+          apt: name=libapache-mod-php5 state=present
+        
+        - name : 3. start apache
+          apt: name=apache2 state=running enabled=yes
+         
+        - name : 4. install hello world PHP script
+          copy: src=index.php dest=/var/www/index.php mode=0664
 
