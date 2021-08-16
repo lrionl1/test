@@ -1,5 +1,6 @@
 -
-    hosts: localhost
-    name: 'Hello World!'
+    hosts: {{ lookup('env','TOWER_HOST') | default('default_value') }}
     tasks:
-        - debug: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+        - name : 1. install Apache
+          apt: name=apache2 state=present
+
