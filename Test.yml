@@ -4,17 +4,8 @@
   gather_facts: false
   tasks:
   
-    - name: Display Username from Vault
-      debug:
-        msg: "{{ ansible_user }}"        
-    - name: Display Password from Vault
-      debug:
-        msg: "{{ ansible_password }}"
-    - name: Get a secret from using with_vault
-      debug:
-        msg="{{ item.value }}"
     - name: Display test host from Vault
       debug:
-        msg: "{{ ansible_testhost }}"
+        msg: "{{ testhost }}"
     - name: Test connection to host
       ping:    
