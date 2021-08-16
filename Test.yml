@@ -8,9 +8,8 @@
       debug: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
         
     
-    - name: Display Password from Vault
-      debug:
-        msg="{{  lookup('vault', 'kv_awx/ansible/testhost', 'testhost') }}"
+    - name: Display testhost from Vault
+      password: "{{ lookup('vault', 'secret=kv_awx/ansible')['testhost']}}"
         
     - name: Test connection to host
       ping:    
