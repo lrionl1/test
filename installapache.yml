@@ -1,5 +1,5 @@
--
-    hosts: {{ lookup('env','TOWER_HOST') | default('default_value') }}
+---
+-   hosts: {{ lookup('env','TOWER_HOST') | default('default_value') }}
     tasks:
         - name : 1. install Apache
           apt: name=apache2 state=present
