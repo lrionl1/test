@@ -4,4 +4,13 @@
   gather_facts: false
   tasks:
   
-    - debug: msg="{{  lookup('vault', 'kv_awx/ansible', 'testhost') }}"
+    - name: Display default_value from Vault
+      debug: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+        
+    
+    - name: Display Password from Vault
+      debug:
+        msg: "{{ testhost }}"
+        
+    - name: Test connection to host
+      ping:    
