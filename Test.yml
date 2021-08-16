@@ -2,5 +2,4 @@
     hosts: localhost
     name: 'Hello World!'
     tasks:
-        -
-            debug: msg="{{  lookup('vault', 'secret/data/test', 'data') }}"
+        - debug: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
