@@ -2,5 +2,5 @@
 - hosts: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
   tasks:
     -
-      debug: msg="{{  lookup('vault_1', 'kv_awx.ansible', 'testhost') }}"
+      debug: msg="{{  lookup('vault_1', 'kv_awx/ansible', 'testhost') }}"
 
