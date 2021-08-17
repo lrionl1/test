@@ -1,4 +1,10 @@
 ---
+- name: Prepare
+  task:
+
+    - name: prepare
+      debug:
+        msg: "prepare"
 - hosts: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
   vars:
     greeting: Hello world!
