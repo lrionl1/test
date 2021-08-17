@@ -1,6 +1,8 @@
 ---
 - hosts: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+  vars:
+      aws_credential: "{{ lookup('hashi_vault', 'secret=kv_awx/data/ansible')}}"
   tasks:
     -
-      debug: msg="{{  lookup('hashi_vault', 'kv_awx/ansible', 'testhost') }}"
+      debug: msg="{{ aws_credential.data.testhost }}"
 
