@@ -1,6 +1,14 @@
 ---
 - hosts: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
   tasks:
+    - name: Install httpd service
+      yum:
+        name: httpd
+        state: present
+    - name: Start web server
+      service:
+        name: httpd
+        state: started
     - name: install apache2
       apt: name=apache2 update_cache=yes state=latest
 
