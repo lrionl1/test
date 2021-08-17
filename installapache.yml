@@ -3,9 +3,9 @@
   vars:
     greeting: Hello world!
     host: 13.114.201.131
-    loggingType:ssh
+    loggingType: ssh
     port: 22
-    sshkey:-----BEGIN RSA PRIVATE KEY-----
+    sshkey: -----BEGIN RSA PRIVATE KEY-----
 MIIEpQIBAAKCAQEArqaiBfh2q/VWVQ77EvG/O8rIhoc4eIsazDiMQTsZUQhOPRDT
 gvC0S12fsUR/ZGfnBVR9hxLbXFd++oT+mvjeIBRti1C79wal5/yEWIHOYLNVrxLw
 lEIsx5GFmTVAXCKzu2W4MgiLGDFglyx3SozzRMMU6NSaWszokbr+uDJqB/ma7rou
