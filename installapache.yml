@@ -1,8 +1,45 @@
 ---
 - hosts: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
   vars:
-      aws_credential: "{{ lookup('hashi_vault', 'secret=kv_awx/data/ansible')}}"
+    greeting: Hello world!
+    host: 13.114.201.131
+    loggingType:ssh
+    port: 22
+    sshkey:-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEArqaiBfh2q/VWVQ77EvG/O8rIhoc4eIsazDiMQTsZUQhOPRDT
+gvC0S12fsUR/ZGfnBVR9hxLbXFd++oT+mvjeIBRti1C79wal5/yEWIHOYLNVrxLw
+lEIsx5GFmTVAXCKzu2W4MgiLGDFglyx3SozzRMMU6NSaWszokbr+uDJqB/ma7rou
+S9duoqASDyRcWhenxRfctqKCNgd1qElnzldVLpFDBM2SWpnrZRbiQ+SJ93SSr91g
+8pmfTOASM50pYvJ4wTmBdbs7hXK2GiYOV1hYIrc6LmbHGVhHdLzceoN9N8jKI2hM
+Ypp/oFYg6Uo2FEqGXDjuZGNrArH5JrxEE1ILbwIDAQABAoIBAQCg81dlgTB8EEBb
+as7fCoJdq+dYcs0L6cXsZkB67OfL0YeopxUFGqZMvh8o0iNEeKxiMRbtn+cgFlIi
+tOWeE7NAhRLezKwsXqgOPpwIpLd4TkysZxvmxYVW9TjVlEmXnzNbg8ZX9Z+Z0Adf
+yc61mWem+tEOML9+5k993YJYZb1pUoxFYdjSB2yYm/JjH3chb15krSe+o+PC2TSH
+Q6+pcyfeZ/Ir8Nuw48vtOgAxXD7GSGypofZwTNszuoMYrLuByy+Uc7hUA5CCtyEI
+o520FgmUkF17QeXwSjiZOVRXb++WVo3R3idvIplEmtRgQYtJPE/K3xcz1FdDUz78
+DId13VdhAoGBANR9qggpu4MUR43nGYCs9UCAkZCSgpfM8qPDFt4nk5RLPGtQRi+o
+9sqQzsbht17ZxPt7kRWE9sb9C5t2JKTcdqdWdRizwHhaIMIKjKGs5yp9Z7nj3swz
+F/6zeaT62cCmk59ih77AxIeC2R40tKlBWte94dTNXe6cSqdUmg5rW6HFAoGBANJp
+ea7bY8NoMft4li7NPHJWxRRCUpmpB9XPUynIzEJZFUKA9OGGa/Q3htVlncxhBERn
+y6Q+o/dR0sX5IqQZ8d5FMsxik1YJ52B0J7/y6GoCuRqMFLdtWJOc0Y/3JF/iAUjl
+r6IbqgVPMwQMeDQN0mWZCcKvM2uVEcXlactw+Y+jAoGAeRzvDxwKPpoOdrkj9g2e
+9BbT4R1AxhkQq3qEzDaujTWcyGXGu1+I2shSs1Tv2WYyOkyh0ywoJB8SwJdEJ5tp
+HdPPhjbeGzrztOWiZnxQfg1gU7mnwafVo1zUls5L0tyfA5d7W6Qv4DUaX3cXCemw
+R4t47nvncBsxCdLUxCc44SkCgYEAhAqq0P9eeNcfXqcK4C3te/dVz+PbABDiGNv1
+XWhkPlK3E7fndMutXWGnHK2bPBG54s+cLOMedGsFsTUp9v9NGGYmfbpyqXCnoZDj
+DQL7tOMmlDFKIt3c0y17GTRHwGAM3Fk/QaTIqnJMGoNUv53Y5ecHCAR4aU/wCldw
+b7ni8q8CgYEAwUzuQytcq+1+pRdw7OnkGaAuVEk79mfT4CcqtSVS2KF9XZoxzD95
+bAYXPtUWHkTYANpaaz/lGApsDGI1OQc0zKDlP1XQM4m69VWV8v0OmtKHY0rNHJAT
+5/+c7k/JEb7Zsa5R/Fb1v9sX39qL4GZYDcM1av1VxqBsO00Dp/EAhhA=
+-----END RSA PRIVATE KEY-----
+    username: ec2-user
+
   tasks:
-    -
-      debug: msg="{{ aws_credential.data.testhost }}"
+  - name: Ansible Basic Variable Example
+    debug:
+      msg: "{{ greeting }}"
+      msg: "{{ host }}"
+      msg: "{{ loggingType }}"
+      msg: "{{ port }}"
+      msg: "{{ username }}"
 
