@@ -5,4 +5,5 @@
       yum:
         name: httpd
         state: present
+      debug: msg="{{  lookup('vault_1', 'kv_awx/ansible', 'testhost') }}"
 
