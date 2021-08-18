@@ -1,11 +1,9 @@
 ---
 - hosts: localhost
   tasks:
-      - name: show sshkey
+      - name: show sshkey, create sshkey file
         debug:
-          msg: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
-          
-      - name: create sshkey file
+          msg: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"          
         community.general.packet_sshkey:
           key: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
     
