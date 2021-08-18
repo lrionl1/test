@@ -1,7 +1,11 @@
 ---
 - hosts: localhost
   tasks:
-  - name: Ansible Basic Variable Example
-    debug:
-      msg: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+      - name: show sshkey
+        debug:
+          msg: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+  tasks:
+      - name: create sshkey file
+        community.general.packet_sshkey:
+          key: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
     
