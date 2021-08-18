@@ -1,4 +1,4 @@
-- name: Create sshkey from string
+---
   - hosts: localhost
     vars:
       greeting: Hello world!
