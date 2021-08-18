@@ -1,24 +1,20 @@
 ---
-- name: Prepare
-  task:
-
-    - name: prepare
-      debug:
-        msg: "prepare"
-- hosts: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+- name: Create sshkey from string
+  hosts: localhost
   vars:
-    greeting: Hello world!
+	greeting: Hello world!
     host: 13.114.201.131
     loggingType: ssh
     port: 22
     username: ec2-user
-
+	sshkey: asdasd
   tasks:
-  - name: Ansible Basic Variable Example
-    debug:
-      msg: "{{ greeting }}"
-      msg: "{{ host }}"
-      msg: "{{ loggingType }}"
-      msg: "{{ port }}"
-      msg: "{{ username }}"
+    community.general.packet_sshkey:
+      key: "{{ sshkey }}"
+  - hosts: {{ host  }}
+	ansible_port: {{ port }}
+	ansible_user: {{ username }}
+	ansible_ssh_private_key_file: {{ key }}
+  tasks:
+    - ping:
 
