@@ -1,5 +1,6 @@
 ---
-- hosts: localhost
+- name: Show credentials from vault
+  hosts: localhost
   vars:
     greeting: Hello world!
     host: 13.114.201.131
@@ -10,10 +11,9 @@
   tasks:
     community.general.packet_sshkey:
       key: "{{ sshkey }}"
-- hosts: "{{ host }}"
+  hosts: "{{ host }}"
   ansible_port: "{{ port }}"
   ansible_user: "{{ username }}"
   ansible_ssh_private_key_file: "{{ key }}"
   tasks:
   - ping:
-
