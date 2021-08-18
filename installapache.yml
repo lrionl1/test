@@ -1,5 +1,5 @@
 ---
-- name: Create sshkey file
+-
   hosts: localhost
   vars:
     greeting: Hello world!
@@ -8,6 +8,7 @@
     port: 22
     username: ec2-user
     sshkey: asdasd
+   
   tasks:
     community.general.packet_sshkey:
       key: "{{ sshkey }}"
