@@ -1,5 +1,5 @@
 ---
-- name: Show credentials from vault
+- name: Create sshkey file
   hosts: localhost
   vars:
     greeting: Hello world!
@@ -11,9 +11,3 @@
   tasks:
     community.general.packet_sshkey:
       key: "{{ sshkey }}"
-  hosts: "{{ host }}"
-  ansible_port: "{{ port }}"
-  ansible_user: "{{ username }}"
-  ansible_ssh_private_key_file: "{{ key }}"
-  tasks:
-  - ping:
