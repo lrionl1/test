@@ -2,5 +2,4 @@
 - name: Create sshkey from string
   hosts: localhost
   tasks:
-    community.general.packet_sshkey:
-      key: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+    msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
