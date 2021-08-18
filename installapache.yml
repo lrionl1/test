@@ -1,13 +1,12 @@
----
 - name: Create sshkey from string
   hosts: localhost
   vars:
-	greeting: Hello world!
+    greeting: Hello world!
     host: 13.114.201.131
     loggingType: ssh
     port: 22
     username: ec2-user
-	sshkey: asdasd
+    sshkey: asdasd
   tasks:
     community.general.packet_sshkey:
       key: "{{ sshkey }}"
