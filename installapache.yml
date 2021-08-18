@@ -2,6 +2,5 @@
 - hosts: localhost
   tasks:
   - name: Ansible Basic Variable Example
-    debug:
       msg: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
     
