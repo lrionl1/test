@@ -10,6 +10,6 @@
     username: ec2-user
     sshkey: asdasd
  
-  tasks: 
-    - community.general.packet_sshkey:
-        key: "{{ sshkey }}"
+  tasks:
+    community.general.packet_sshkey:
+      key: "{{ lookup('file', 'my_packet_sshkey.pub') }}"
