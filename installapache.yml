@@ -10,10 +10,10 @@
   tasks:
     community.general.packet_sshkey:
       key: "{{ sshkey }}"
-  - hosts: {{ host  }}
-      ansible_port: {{ port }}
-      ansible_user: {{ username }}
-      ansible_ssh_private_key_file: {{ key }}
+  - hosts: "{{ host  }}"
+      ansible_port: "{{ port }}"
+      ansible_user: "{{ username }}"
+      ansible_ssh_private_key_file: "{{ key }}"
   tasks:
     - ping:
 
