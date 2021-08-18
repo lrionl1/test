@@ -3,4 +3,4 @@
   hosts: localhost
   tasks:
     community.general.packet_sshkey:
-      key: "{{ lookup('file', 'my_packet_sshkey.pub') }}"
+      key: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
