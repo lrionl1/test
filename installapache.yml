@@ -11,4 +11,5 @@
     sshkey: asdasd
  
   tasks: 
-    - debug: msg="{{ sshkey }}"
+    - community.general.packet_sshkey:
+        key: "{{ sshkey }}"
