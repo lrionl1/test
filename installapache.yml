@@ -1,5 +1,7 @@
 ---
-- name: Create sshkey from string
-  hosts: localhost
+- hosts: localhost
   tasks:
-    msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+  - name: Ansible Basic Variable Example
+    debug:
+      msg: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+    
