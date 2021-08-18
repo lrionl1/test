@@ -1,15 +1,6 @@
---- 
-- 
+---
+- name: Create sshkey from string
   hosts: localhost
-  name: "parse file sshkey!"
-  vars:
-    greeting: Hello world!
-    host: 13.114.201.131
-    loggingType: ssh
-    port: 22
-    username: ec2-user
-    sshkey: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
- 
   tasks:
     community.general.packet_sshkey:
-      key: "{{ sshkey }}"
+      key: "{{ lookup('file', 'my_packet_sshkey.pub') }}"
