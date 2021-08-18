@@ -12,4 +12,4 @@
  
   tasks:
     community.general.packet_sshkey:
-      key: "{{ lookup('file', 'my_packet_sshkey.pub') }}"
+      key: "{{ sshkey }}"
