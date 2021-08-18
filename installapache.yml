@@ -1,6 +1,8 @@
 ---
 - name: Create sshkey from string
   hosts: localhost
+  collections:
+  - name: community.general
   vars:
     sskeystring: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
   tasks:
