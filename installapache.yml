@@ -12,7 +12,3 @@
  
   tasks: 
     - debug: msg="{{ sshkey }}"
-    
-  tasks:
-    community.general.packet_sshkey:
-      key: "{{ sshkey }}"
