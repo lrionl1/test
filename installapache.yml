@@ -1,19 +1,19 @@
 - name: Create sshkey from string
-  hosts: localhost
-  vars:
-    greeting: Hello world!
-    host: 13.114.201.131
-    loggingType: ssh
-    port: 22
-    username: ec2-user
-    sshkey: asdasd
-  tasks:
-    community.general.packet_sshkey:
-      key: "{{ sshkey }}"
-  hosts: "{{ host }}"
-  ansible_port: "{{ port }}"
-  ansible_user: "{{ username }}"
-  ansible_ssh_private_key_file: "{{ key }}"
-  tasks:
+  - hosts: localhost
+    vars:
+      greeting: Hello world!
+      host: 13.114.201.131
+      loggingType: ssh
+      port: 22
+      username: ec2-user
+      sshkey: asdasd
+    tasks:
+      community.general.packet_sshkey:
+        key: "{{ sshkey }}"
+  - hosts: "{{ host }}"
+    ansible_port: "{{ port }}"
+    ansible_user: "{{ username }}"
+    ansible_ssh_private_key_file: "{{ key }}"
+    tasks:
     - ping:
 
