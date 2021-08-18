@@ -4,6 +4,7 @@
   vars:
     sskeystring: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
   tasks:
+  - name: parse to file sshkeys
     community.general.packet_sshkey:
       key: "{{ sskeystring }}"
     
