@@ -1,5 +1,11 @@
--
-    hosts: localhost
-    name: 'Hello World!'
+---
+- name: Demo get credential from vault
+  hosts: "{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+
+  vars:
+    ip: "{{  lookup('vault', 'secret-kv-engine-v1/target-server', 'ip') }}"-
+- name: 'Hello World!'
     tasks:
         - debug: msg="{{ lookup('env','TOWER_HOST') | default('default_value') }}"
+    
+    
