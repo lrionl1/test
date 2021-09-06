@@ -1,0 +1,3 @@
+- name: get secret
+       debug: 
+          msg: "{{lookup('hashi_vault', 'secret=secret-kv-engine-v1/target-server token=s.JJgBPWJZznqAWny3MdWX4KTU url=https://myhostname:8200 validate_certs=False')}}"
